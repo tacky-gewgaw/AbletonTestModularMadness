@@ -10,14 +10,15 @@
 #define Network_hpp
 
 #include <stdio.h>
+#include <map>
 #include "Module/ModuleFactory.hpp"
 
 using namespace std;
 
 class Network {
 private:
-    ModuleFactory mf;
-    std::list<Module> modulesInOrder;
+    map<string,Module*> moduleRegistry = {};
+    list<Module*> modulesInOrder = {};
 public:
     Network();
     void makeModule(const std::string &name, const std::string &type);

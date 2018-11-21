@@ -17,9 +17,10 @@ using namespace std;
 
 class Module {
 protected:
-    list<Module> connectionsOut;
-    string output;
+    list<Module*> connectionsOut = {};
+    string output = "";
 public:
+    void connnectOutputTo(Module* m);
     virtual void process(const string &input, string &output);
 };
 

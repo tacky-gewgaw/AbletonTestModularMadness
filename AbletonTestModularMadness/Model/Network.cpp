@@ -8,15 +8,15 @@
 
 #include "Network.hpp"
 
-Network::Network() {
-    
+void Network::makeModule(const string &name, const string &type) {
+    Module* m = ModuleFactory::create(type);
+    modulesInOrder.push_back(m);
+    moduleRegistry.insert(pair<string, Module*>(name, m));
 }
 
-void Network::makeModule(const std::string &name, const std::string &type) {
-    Module m;
+void Network::makeConnection(const string &name1, const string &name2) {
+    Module* outModule = moduleRegistry[name1];
+    Module* inModule = moduleRegistry[name2];
     
-}
-
-void Network::makeConnection(const std::string &name1, const std::string &name2) {
-    
+    outModule -> connnectOutputTo(inModule);
 }

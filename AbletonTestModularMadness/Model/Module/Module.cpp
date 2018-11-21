@@ -9,3 +9,6 @@
 #include "Module.hpp"
 #include "NoopModule.hpp"
 
+void Module::connnectOutputTo(Module *m) {
+    connectionsOut.push_back(m);
+}
