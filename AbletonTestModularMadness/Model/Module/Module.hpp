@@ -19,9 +19,12 @@ class Module {
 protected:
     list<Module*> connectionsOut = {};
     string output = "";
+    string input = "";
 public:
     void connnectOutputTo(Module* m);
-    virtual void process(const string &input, string &output);
+    void feedInput(const string &value);
+    void getOutput(string &result);
+    virtual void process();
 };
 
 #endif /* Module_hpp */

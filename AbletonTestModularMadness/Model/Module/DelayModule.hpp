@@ -13,7 +13,8 @@
 #include "Module.hpp"
 
 class DelayModule : public Module {
-    
+private:
+    string previousOutput = "hello";
 };
 
 #endif /* DelayModule_hpp */

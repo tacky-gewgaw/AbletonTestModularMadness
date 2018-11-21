@@ -20,7 +20,6 @@ private:
     map<string,Module*> moduleRegistry = {};
     list<Module*> modulesInOrder = {};
 public:
-    Network();
     void makeModule(const std::string &name, const std::string &type);
     void makeConnection(const std::string &name1, const std::string &name2);
     void process(const std::string &input, const std::string &output);

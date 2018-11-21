@@ -30,6 +30,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C5087D9221A5CED50023009C /* catch.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = catch.hpp; sourceTree = "<group>"; };
 		C555896621A34D7C00FCF676 /* AbletonTestModularMadness */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AbletonTestModularMadness; sourceTree = BUILT_PRODUCTS_DIR; };
 		C555896921A34D7C00FCF676 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		C555897421A3D1B300FCF676 /* Network.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Network.cpp; sourceTree = "<group>"; };
@@ -79,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				C555897021A34DF400FCF676 /* Model */,
+				C5087D9221A5CED50023009C /* catch.hpp */,
 				C555896921A34D7C00FCF676 /* main.cpp */,
 			);
 			path = AbletonTestModularMadness;
