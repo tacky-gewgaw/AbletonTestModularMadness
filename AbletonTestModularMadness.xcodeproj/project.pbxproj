@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		C555896A21A34D7C00FCF676 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C555896921A34D7C00FCF676 /* main.cpp */; };
+		C555897621A3D1B300FCF676 /* Network.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C555897421A3D1B300FCF676 /* Network.cpp */; };
+		C555899821A5AE0600FCF676 /* Module.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C555899621A5AE0600FCF676 /* Module.cpp */; };
+		C555899B21A5AEBE00FCF676 /* NoopModule.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C555899921A5AEBE00FCF676 /* NoopModule.cpp */; };
+		C555899E21A5AECB00FCF676 /* EchoModule.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C555899C21A5AECB00FCF676 /* EchoModule.cpp */; };
+		C55589A121A5AEEE00FCF676 /* DelayModule.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C555899F21A5AEEE00FCF676 /* DelayModule.cpp */; };
+		C55589A421A5AF2B00FCF676 /* ReverseModule.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C55589A221A5AF2B00FCF676 /* ReverseModule.cpp */; };
+		C55589A721A5AF4100FCF676 /* ModuleFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C55589A521A5AF4100FCF676 /* ModuleFactory.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +32,20 @@
 /* Begin PBXFileReference section */
 		C555896621A34D7C00FCF676 /* AbletonTestModularMadness */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AbletonTestModularMadness; sourceTree = BUILT_PRODUCTS_DIR; };
 		C555896921A34D7C00FCF676 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		C555897421A3D1B300FCF676 /* Network.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Network.cpp; sourceTree = "<group>"; };
+		C555897521A3D1B300FCF676 /* Network.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Network.hpp; sourceTree = "<group>"; };
+		C555899621A5AE0600FCF676 /* Module.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Module.cpp; sourceTree = "<group>"; };
+		C555899721A5AE0600FCF676 /* Module.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Module.hpp; sourceTree = "<group>"; };
+		C555899921A5AEBE00FCF676 /* NoopModule.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = NoopModule.cpp; sourceTree = "<group>"; };
+		C555899A21A5AEBE00FCF676 /* NoopModule.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NoopModule.hpp; sourceTree = "<group>"; };
+		C555899C21A5AECB00FCF676 /* EchoModule.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = EchoModule.cpp; sourceTree = "<group>"; };
+		C555899D21A5AECB00FCF676 /* EchoModule.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = EchoModule.hpp; sourceTree = "<group>"; };
+		C555899F21A5AEEE00FCF676 /* DelayModule.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = DelayModule.cpp; sourceTree = "<group>"; };
+		C55589A021A5AEEE00FCF676 /* DelayModule.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = DelayModule.hpp; sourceTree = "<group>"; };
+		C55589A221A5AF2B00FCF676 /* ReverseModule.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ReverseModule.cpp; sourceTree = "<group>"; };
+		C55589A321A5AF2B00FCF676 /* ReverseModule.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ReverseModule.hpp; sourceTree = "<group>"; };
+		C55589A521A5AF4100FCF676 /* ModuleFactory.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ModuleFactory.cpp; sourceTree = "<group>"; };
+		C55589A621A5AF4100FCF676 /* ModuleFactory.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ModuleFactory.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +78,39 @@
 		C555896821A34D7C00FCF676 /* AbletonTestModularMadness */ = {
 			isa = PBXGroup;
 			children = (
+				C555897021A34DF400FCF676 /* Model */,
 				C555896921A34D7C00FCF676 /* main.cpp */,
 			);
 			path = AbletonTestModularMadness;
+			sourceTree = "<group>";
+		};
+		C555897021A34DF400FCF676 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C555899521A5ADF000FCF676 /* Module */,
+				C555897421A3D1B300FCF676 /* Network.cpp */,
+				C555897521A3D1B300FCF676 /* Network.hpp */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C555899521A5ADF000FCF676 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				C555899621A5AE0600FCF676 /* Module.cpp */,
+				C555899721A5AE0600FCF676 /* Module.hpp */,
+				C555899921A5AEBE00FCF676 /* NoopModule.cpp */,
+				C555899A21A5AEBE00FCF676 /* NoopModule.hpp */,
+				C555899C21A5AECB00FCF676 /* EchoModule.cpp */,
+				C555899D21A5AECB00FCF676 /* EchoModule.hpp */,
+				C555899F21A5AEEE00FCF676 /* DelayModule.cpp */,
+				C55589A021A5AEEE00FCF676 /* DelayModule.hpp */,
+				C55589A221A5AF2B00FCF676 /* ReverseModule.cpp */,
+				C55589A321A5AF2B00FCF676 /* ReverseModule.hpp */,
+				C55589A521A5AF4100FCF676 /* ModuleFactory.cpp */,
+				C55589A621A5AF4100FCF676 /* ModuleFactory.hpp */,
+			);
+			path = Module;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -118,7 +169,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C55589A721A5AF4100FCF676 /* ModuleFactory.cpp in Sources */,
 				C555896A21A34D7C00FCF676 /* main.cpp in Sources */,
+				C555899B21A5AEBE00FCF676 /* NoopModule.cpp in Sources */,
+				C55589A421A5AF2B00FCF676 /* ReverseModule.cpp in Sources */,
+				C555899E21A5AECB00FCF676 /* EchoModule.cpp in Sources */,
+				C555899821A5AE0600FCF676 /* Module.cpp in Sources */,
+				C555897621A3D1B300FCF676 /* Network.cpp in Sources */,
+				C55589A121A5AEEE00FCF676 /* DelayModule.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
