@@ -13,7 +13,10 @@
 #include "Module.hpp"
 
 class NoopModule : public Module {
-    
+public:
+    void process() override;
+
+    string process(string in) override;
 };
 
 #endif /* NoopModule_hpp */

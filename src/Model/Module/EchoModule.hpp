@@ -13,7 +13,10 @@
 #include "Module.hpp"
 
 class EchoModule : public Module {
-    
+public:
+    string process(string in) override;
+
+    void process() override;
 };
 
 #endif /* EchoModule_hpp */

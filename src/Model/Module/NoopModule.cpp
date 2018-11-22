@@ -7,3 +7,11 @@
 //
 
 #include "NoopModule.hpp"
+
+void NoopModule::process() {
+
+}
+
+string NoopModule::process(string in) {
+    return std::string();
+}

@@ -13,7 +13,11 @@
 #include "Module.hpp"
 
 class ReverseModule : public Module {
-    
+public:
+    void process() override;
+
+    string process(string) override;
 };
+
 
 #endif /* ReverseModule_hpp */

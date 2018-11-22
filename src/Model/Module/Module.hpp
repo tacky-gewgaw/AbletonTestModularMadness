@@ -17,14 +17,19 @@ using namespace std;
 
 class Module {
 protected:
-    list<Module*> connectionsOut = {};
+    list<Module *> connectionsOut = {};
     string output = "";
     string input = "";
 public:
-    void connnectOutputTo(Module* m);
+    void connnectOutputTo(Module *m);
+
     void feedInput(const string &value);
+
     void getOutput(string &result);
-    virtual void process();
+
+    virtual void process() = 0;
+
+    virtual string process(string) = 0;
 };
 
 #endif /* Module_hpp */

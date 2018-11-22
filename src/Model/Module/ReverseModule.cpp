@@ -7,3 +7,12 @@
 //
 
 #include "ReverseModule.hpp"
+
+void ReverseModule::process() {
+
+}
+
+string ReverseModule::process(string in) {
+    reverse(in.begin(), in.end());
+    return in;
+}

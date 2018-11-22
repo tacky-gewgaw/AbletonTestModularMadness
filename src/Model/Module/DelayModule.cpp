@@ -7,3 +7,11 @@
 //
 
 #include "DelayModule.hpp"
+
+void DelayModule::process() {
+
+}
+
+string DelayModule::process(string string1) {
+    return std::string();
+}

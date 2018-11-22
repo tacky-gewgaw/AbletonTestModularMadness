@@ -7,3 +7,11 @@
 //
 
 #include "EchoModule.hpp"
+
+void EchoModule::process() {
+
+}
+
+string EchoModule::process(string in) {
+    return std::string();
+}
