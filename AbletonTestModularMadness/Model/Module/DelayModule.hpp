@@ -14,7 +14,7 @@
 
 class DelayModule : public Module {
 private:
-    string previousOutput = "hello";
+    std::string previousOutput = "hello";
 };
 
 #endif /* DelayModule_hpp */

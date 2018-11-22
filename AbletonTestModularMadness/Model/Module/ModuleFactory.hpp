@@ -17,7 +17,7 @@
 
 class ModuleFactory {
 public:
-    static Module *create(const string &type);
+    Module *create(const std::string &type);
 };
 
 #endif /* ModuleFactory_hpp */

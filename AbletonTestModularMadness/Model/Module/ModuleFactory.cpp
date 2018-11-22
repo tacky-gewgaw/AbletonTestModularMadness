@@ -8,7 +8,7 @@
 
 #include "ModuleFactory.hpp"
 
-Module *ModuleFactory::create(const string &type) {
+Module *ModuleFactory::create(const std::string &type) { 
     if (type == "delay") {
         return new DelayModule();
     } else if (type == "echo") {

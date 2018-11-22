@@ -13,18 +13,16 @@
 #include <iostream>
 #include <list>
 
-using namespace std;
-
 class Module {
 protected:
-    list<Module*> connectionsOut = {};
-    string output = "";
-    string input = "";
+    std::list<Module*> connectionsOut = {};
+    std::string output = "";
+    std::string input = "";
 public:
     void connnectOutputTo(Module* m);
-    void feedInput(const string &value);
-    void getOutput(string &result);
-    virtual void process();
+    void feedInput(const std::string &value);
+    void getOutput(std::string &result);
+//    virtual void process();
 };
 
 #endif /* Module_hpp */

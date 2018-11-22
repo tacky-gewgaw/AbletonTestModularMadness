@@ -13,16 +13,17 @@
 #include <map>
 #include "Module/ModuleFactory.hpp"
 
-using namespace std;
-
 class Network {
 private:
-    map<string,Module*> moduleRegistry = {};
-    list<Module*> modulesInOrder = {};
+    ModuleFactory* mf;
+    std::map<std::string,Module*> moduleRegistry = {};
+    std::list<Module*> modulesInOrder = {};
 public:
+    Network();
+    ~Network();
     void makeModule(const std::string &name, const std::string &type);
     void makeConnection(const std::string &name1, const std::string &name2);
-    void process(const std::string &input, const std::string &output);
+    void process(const std::string &input, std::string &output);
 };
 
 #endif /* Network_hpp */

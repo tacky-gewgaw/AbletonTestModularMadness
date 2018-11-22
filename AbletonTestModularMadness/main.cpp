@@ -9,37 +9,52 @@
 #include <iostream>
 #include <sstream>
 #include <vector>
-//#include "Model/Network.hpp"
-
-using namespace std;
+#include "Model/Network.hpp"
 
 // Returns false if the command is terminal
-void receive_input() {
-    string command;
+bool receive_input(Network* network) {
+    std::string command;
 
-    getline(cin, command);
-    istringstream iss(command);
+    getline(std::cin, command);
+    
+    std::istringstream iss(command);
 
-    vector<string> results((std::istream_iterator<string>(iss)),
-                           std::istream_iterator<string>());
-    string type = results.at(0);
-    if (type == "module") {
-        cout << "Creating " << results.at(2) << " module called " << results.at(1) << endl;
+    std::vector<std::string> results((std::istream_iterator<std::string>(iss)),
+                           std::istream_iterator<std::string>());
+    std::string type = results.at(0);
+    if (type == "quit") {
+        return false;
+    } else if (type == "module") {
+        std::string type = results.at(2);
+        std::string name = results.at(1);
+        network -> makeModule(name, type);
     } else if (type == "connect") {
-        cout << "Connecting output of " << results.at(1) << " with input of " << results.at(2) << endl;
+        std::string name1 = results.at(1);
+        std::string name2 = results.at(2);
+        network -> makeConnection(name1, name2);
     } else if (type == "process") {
-        cout << "Processing " << results.at(1) << endl;
-        return;
+        std::string input = results.at(1);
+        std::string output = "";
+        network -> process(input, output);
+        std::cout << output << std::endl;
     } else {
-        cout << "Unknown input. Please try again." << endl;
+        std::cout << "Unknown input. Please try again." << std::endl;
     }
-    receive_input();
+    return true;
 }
 
 int main(int argc, const char * argv[]) {
-    cout << "Welcome to Modular Madness!" << endl;
+    std::cout << "Welcome to Modular Madness!" << std::endl;
     
-    receive_input();
+    Network* network = new Network();
+    
+    bool run = true;
+    
+    while (run) {
+        run = receive_input(network);
+    }
+    
+    delete network;
     
     return 0;
 }
