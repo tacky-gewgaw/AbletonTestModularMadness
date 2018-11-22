@@ -15,6 +15,8 @@
 class DelayModule : public Module {
 private:
     string previousOutput = "hello";
+public:
+    void process() override;
 };
 
 #endif /* DelayModule_hpp */

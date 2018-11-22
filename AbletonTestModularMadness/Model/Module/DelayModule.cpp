@@ -7,3 +7,7 @@
 //
 
 #include "DelayModule.hpp"
+
+void DelayModule::process() {
+
+}

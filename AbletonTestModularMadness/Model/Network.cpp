@@ -27,10 +27,10 @@ void Network::process(const std::string &input, const std::string &output) {
     
     first -> feedInput(input);
     
-    list<Module*>::iterator it = modulesInOrder.begin();
-    for (it; it != modulesInOrder.end(); it++) {
-        
-    }
+//    list<Module*>::iterator it = modulesInOrder.begin();
+//    for (it; it != modulesInOrder.end(); it++) {
+//
+//    }
 }
 
 

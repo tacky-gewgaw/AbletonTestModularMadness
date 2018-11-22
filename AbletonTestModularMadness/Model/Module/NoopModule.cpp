@@ -7,3 +7,7 @@
 //
 
 #include "NoopModule.hpp"
+
+void NoopModule::process() {
+
+}

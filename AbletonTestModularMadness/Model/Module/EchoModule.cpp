@@ -7,3 +7,7 @@
 //
 
 #include "EchoModule.hpp"
+
+void EchoModule::process() {
+
+}

@@ -7,3 +7,7 @@
 //
 
 #include "ReverseModule.hpp"
+
+void ReverseModule::process() {
+
+}

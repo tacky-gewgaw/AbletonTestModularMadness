@@ -24,7 +24,7 @@ public:
     void connnectOutputTo(Module* m);
     void feedInput(const string &value);
     void getOutput(string &result);
-    virtual void process();
+    virtual void process() =0;
 };
 
 #endif /* Module_hpp */
