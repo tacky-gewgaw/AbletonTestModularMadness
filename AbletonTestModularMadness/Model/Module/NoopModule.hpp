@@ -1,6 +1,6 @@
 //
 //  NoopModule.hpp
-//  AbletonTestModularMadness
+//  src
 //
 //  Created by Sander van Kasteel on 21/11/2018.
 //  Copyright © 2018 Sander van Kasteel. All rights reserved.
@@ -15,6 +15,8 @@
 class NoopModule : public Module {
 public:
     void process() override;
+
+    string process(string in) override;
 };
 
 #endif /* NoopModule_hpp */

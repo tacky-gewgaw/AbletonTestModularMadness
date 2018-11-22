@@ -1,6 +1,6 @@
 //
 //  EchoModule.hpp
-//  AbletonTestModularMadness
+//  src
 //
 //  Created by Sander van Kasteel on 21/11/2018.
 //  Copyright © 2018 Sander van Kasteel. All rights reserved.
@@ -14,6 +14,8 @@
 
 class EchoModule : public Module {
 public:
+    string process(string in) override;
+
     void process() override;
 };
 

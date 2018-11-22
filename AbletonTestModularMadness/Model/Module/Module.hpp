@@ -1,6 +1,6 @@
 //
 //  Module.hpp
-//  AbletonTestModularMadness
+//  src
 //
 //  Created by Sander van Kasteel on 21/11/2018.
 //  Copyright © 2018 Sander van Kasteel. All rights reserved.
@@ -17,14 +17,19 @@ using namespace std;
 
 class Module {
 protected:
-    list<Module*> connectionsOut = {};
+    list<Module *> connectionsOut = {};
     string output = "";
     string input = "";
 public:
-    void connnectOutputTo(Module* m);
+    void connnectOutputTo(Module *m);
+
     void feedInput(const string &value);
+
     void getOutput(string &result);
-    virtual void process() =0;
+
+    virtual void process() = 0;
+
+    virtual string process(string) = 0;
 };
 
 #endif /* Module_hpp */

@@ -1,6 +1,6 @@
 //
 //  DelayModule.hpp
-//  AbletonTestModularMadness
+//  src
 //
 //  Created by Sander van Kasteel on 21/11/2018.
 //  Copyright © 2018 Sander van Kasteel. All rights reserved.
@@ -16,7 +16,10 @@ class DelayModule : public Module {
 private:
     string previousOutput = "hello";
 public:
+
     void process() override;
+
+    string process(string in) override;
 };
 
 #endif /* DelayModule_hpp */
