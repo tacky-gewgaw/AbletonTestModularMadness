@@ -1,17 +1,17 @@
 //
-//  NoopModule.cpp
-//  AbletonTestModularMadness
+//  EchoModule.cpp
+//  src
 //
 //  Created by Sander van Kasteel on 21/11/2018.
 //  Copyright © 2018 Sander van Kasteel. All rights reserved.
 //
 
-#include "NoopModule.hpp"
+#include "EchoModule.hpp"
 
-void NoopModule::process() {
+void EchoModule::process() {
 
 }
 
-string NoopModule::process(string in) {
+string EchoModule::process(string in) {
     return std::string();
 }

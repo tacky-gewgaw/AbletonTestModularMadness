@@ -1,17 +1,17 @@
 //
-//  DelayModule.cpp
-//  AbletonTestModularMadness
+//  NoopModule.cpp
+//  src
 //
 //  Created by Sander van Kasteel on 21/11/2018.
 //  Copyright © 2018 Sander van Kasteel. All rights reserved.
 //
 
-#include "DelayModule.hpp"
+#include "NoopModule.hpp"
 
-void DelayModule::process() {
+void NoopModule::process() {
 
 }
 
-string DelayModule::process(string string1) {
+string NoopModule::process(string in) {
     return std::string();
 }

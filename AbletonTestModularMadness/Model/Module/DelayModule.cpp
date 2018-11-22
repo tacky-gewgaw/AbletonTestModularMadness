@@ -1,17 +1,17 @@
 //
-//  EchoModule.cpp
-//  AbletonTestModularMadness
+//  DelayModule.cpp
+//  src
 //
 //  Created by Sander van Kasteel on 21/11/2018.
 //  Copyright © 2018 Sander van Kasteel. All rights reserved.
 //
 
-#include "EchoModule.hpp"
+#include "DelayModule.hpp"
 
-void EchoModule::process() {
+void DelayModule::process() {
 
 }
 
-string EchoModule::process(string in) {
+string DelayModule::process(string string1) {
     return std::string();
 }
