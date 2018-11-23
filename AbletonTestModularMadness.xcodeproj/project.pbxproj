@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C5087D9521A871A70023009C /* NetworkController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C5087D9321A871A70023009C /* NetworkController.cpp */; };
 		C555896A21A34D7C00FCF676 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C555896921A34D7C00FCF676 /* main.cpp */; };
 		C555897621A3D1B300FCF676 /* Network.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C555897421A3D1B300FCF676 /* Network.cpp */; };
 		C555899821A5AE0600FCF676 /* Module.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C555899621A5AE0600FCF676 /* Module.cpp */; };
@@ -31,6 +32,8 @@
 
 /* Begin PBXFileReference section */
 		C5087D9221A5CED50023009C /* catch.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = catch.hpp; sourceTree = "<group>"; };
+		C5087D9321A871A70023009C /* NetworkController.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = NetworkController.cpp; sourceTree = "<group>"; };
+		C5087D9421A871A70023009C /* NetworkController.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NetworkController.hpp; sourceTree = "<group>"; };
 		C555896621A34D7C00FCF676 /* AbletonTestModularMadness */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AbletonTestModularMadness; sourceTree = BUILT_PRODUCTS_DIR; };
 		C555896921A34D7C00FCF676 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		C555897421A3D1B300FCF676 /* Network.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Network.cpp; sourceTree = "<group>"; };
@@ -82,6 +85,8 @@
 				C555897021A34DF400FCF676 /* Model */,
 				C5087D9221A5CED50023009C /* catch.hpp */,
 				C555896921A34D7C00FCF676 /* main.cpp */,
+				C5087D9321A871A70023009C /* NetworkController.cpp */,
+				C5087D9421A871A70023009C /* NetworkController.hpp */,
 			);
 			path = AbletonTestModularMadness;
 			sourceTree = "<group>";
@@ -171,6 +176,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5087D9521A871A70023009C /* NetworkController.cpp in Sources */,
 				C55589A721A5AF4100FCF676 /* ModuleFactory.cpp in Sources */,
 				C555896A21A34D7C00FCF676 /* main.cpp in Sources */,
 				C555899B21A5AEBE00FCF676 /* NoopModule.cpp in Sources */,

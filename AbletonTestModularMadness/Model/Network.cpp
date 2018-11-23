@@ -8,6 +8,15 @@
 
 #include "Network.hpp"
 
+//The input defines a network of modules and a stream of input into this network. This input
+//stream should be fed into the first module (in the order of definition) and the output of the
+//program should correspond to the output of the last module. If there are multiple input
+//connections for a module, they should be “summed” before feeding to the module. Summing
+//works by appending the strings in the order in which the input connections have been made.
+//The individual modules should be processed in the order they have been defined.1 The
+//network should only process one string at a time. Each process statement should let the
+//network run empty (see also the example below).
+
 Network::Network() {
     mf = new ModuleFactory();
 }
@@ -40,6 +49,12 @@ void Network::process(const std::string &input, std::string &output) {
     std::cout << "Processing " << input << std::endl;
     Module* first = modulesInOrder.front();
     
+    if (first == nullptr) {
+        output.resize(input.size());
+        std::copy(input.begin(), input.end(), output.begin());
+        return;
+    }
+    
     first -> feedInput(input);
     
     std::list<Module*>::iterator it = modulesInOrder.begin();
@@ -47,7 +62,8 @@ void Network::process(const std::string &input, std::string &output) {
         
     }
     
-    output = input;
+    output.resize(input.size());
+    std::copy(input.begin(), input.end(), output.begin());
 }
 
 
