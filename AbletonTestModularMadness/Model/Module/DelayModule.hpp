@@ -14,7 +14,11 @@
 
 class DelayModule : public Module {
 private:
-    std::string previousOutput = "hello";
+    const std::string defaultValue = "hello";
+    std::string buffer;
+public:
+    DelayModule();
+    void reset();
 };
 
 #endif /* DelayModule_hpp */

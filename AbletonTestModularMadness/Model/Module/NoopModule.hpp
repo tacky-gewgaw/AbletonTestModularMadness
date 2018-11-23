@@ -13,7 +13,8 @@
 #include "Module.hpp"
 
 class NoopModule : public Module {
-    
+public:
+    void reset();
 };
 
 #endif /* NoopModule_hpp */

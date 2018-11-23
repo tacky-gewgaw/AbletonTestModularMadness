@@ -7,3 +7,10 @@
 //
 
 #include "ReverseModule.hpp"
+
+
+void ReverseModule::reset() { 
+    // TODO: implement reset
+}
+
+

@@ -24,6 +24,7 @@ public:
     void makeModule(const std::string &name, const std::string &type);
     void makeConnection(const std::string &name1, const std::string &name2);
     void process(const std::string &input, std::string &output);
+    void clear();
 };
 
 #endif /* Network_hpp */

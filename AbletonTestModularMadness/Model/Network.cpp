@@ -66,6 +66,13 @@ void Network::process(const std::string &input, std::string &output) {
     std::copy(input.begin(), input.end(), output.begin());
 }
 
+void Network::clear() { 
+    for (auto it = modulesInOrder.begin(); it != modulesInOrder.end(); it++) {
+        // TODO: reset the individual module
+    }
+}
+
+
 
 
 

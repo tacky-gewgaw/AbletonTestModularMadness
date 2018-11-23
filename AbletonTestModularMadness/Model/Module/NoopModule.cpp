@@ -7,3 +7,10 @@
 //
 
 #include "NoopModule.hpp"
+
+
+void NoopModule::reset() { 
+    // TODO: implement reset
+}
+
+

@@ -34,6 +34,7 @@ void NetworkController::handleInput(std::vector<std::string> &command) {
         
         std::vector<std::string> outputVector;
         // network -> process(inputVector, outputVector);
+        network -> clear();
         for (std::vector<std::string>::iterator it = outputVector.begin(); it != outputVector.end(); ++it)
             std::cout << ' ' << *it;
         std::cout << std::endl;

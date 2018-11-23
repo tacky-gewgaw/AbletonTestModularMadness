@@ -23,6 +23,7 @@ public:
     void feedInput(const std::string &value);
     void getOutput(std::string &result);
 //    virtual void process();
+    virtual void reset() = 0;
 };
 
 #endif /* Module_hpp */

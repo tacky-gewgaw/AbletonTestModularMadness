@@ -7,3 +7,10 @@
 //
 
 #include "EchoModule.hpp"
+
+
+void EchoModule::reset() { 
+    // TODO: implement reset
+}
+
+

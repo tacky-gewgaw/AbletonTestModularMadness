@@ -13,7 +13,8 @@
 #include "Module.hpp"
 
 class EchoModule : public Module {
-    
+public:
+    void reset();
 };
 
 #endif /* EchoModule_hpp */

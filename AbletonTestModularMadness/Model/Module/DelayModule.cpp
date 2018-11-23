@@ -7,3 +7,14 @@
 //
 
 #include "DelayModule.hpp"
+
+DelayModule::DelayModule() {
+    buffer = defaultValue;
+}
+
+void DelayModule::reset() { 
+    // TODO: implement reset
+}
+
+
+
