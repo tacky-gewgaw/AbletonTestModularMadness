@@ -11,7 +11,7 @@
 #include "NetworkController.hpp"
 
 int main(int argc, const char * argv[]) {
-    std::cout << "Welcome to Modular Madness!" << std::endl;
+    std::cout << "Welcome to Modular Madness!" << std::endl << "Type \"quit\" to exit." << std::endl;
     
     NetworkController* nc = new NetworkController();
     

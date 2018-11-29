@@ -17,7 +17,6 @@ class NetworkController {
 private:
     Network* network;
     const std::string SILENCE = "";
-    void processAndPrint(const std::vector<std::string> &input);
     void process(const std::vector<std::string> &input, std::list<std::string> &output);
 public:
     NetworkController();

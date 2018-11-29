@@ -8,8 +8,6 @@
 
 #include "NetworkController.hpp"
 
-// Idea: feed the network the vector and then feed "silence" until the network remains silent.
-
 NetworkController::NetworkController() {
     network = new Network();
 }
@@ -33,23 +31,25 @@ void NetworkController::handleInput(const std::vector<std::string> &command) {
         std::vector<std::string> inputVector;
         inputVector.resize(command.size() - 1);
         std::copy(++command.begin(), command.end(), inputVector.begin());
-        processAndPrint(inputVector);
+        
+        std::list<std::string> output;
+        
+        process(inputVector, output);
+        
+        for (auto it = output.begin(); it != output.end(); ++it)
+            std::cout << *it << ' ';
+        std::cout << std::endl;
     } else {
-        std::cout << "Unknown input. Please try again." << std::endl;
+        // Print very basic instructions. We assume that all commands are entered correctly, as the assignment suggests.
+        std::cout << "Unknown input. Available commands are:" << std::endl
+        << "\t\"module <name> <type>\"" << std::endl
+        << "\t\"connect <name1> <name2>\"" << std::endl
+        << "\t\"process <input>\"" << std::endl;
     }
 }
 
-void NetworkController::processAndPrint(const std::vector<std::string> &input) {
-    std::list<std::string> output;
-    
-    process(input, output);
-    
-    for (auto it = output.begin(); it != output.end(); ++it)
-        std::cout << *it << ' ';
-    std::cout << std::endl;
-}
-
 void NetworkController::process(const std::vector<std::string> &input, std::list<std::string> &output) {
+    // Since the number of string in the output can be no more than sixteen times the number of strings in the input, we track the output size and interrupt the process when the maximum size is exceeded.
     long maxOutputSize = input.size() * 16;
     long currentOutputSize = 0;
     
