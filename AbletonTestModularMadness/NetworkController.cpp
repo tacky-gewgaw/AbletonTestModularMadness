@@ -8,6 +8,8 @@
 
 #include "NetworkController.hpp"
 
+// Idea: feed the network the vector and then feed "silence" until the network remains silent.
+
 NetworkController::NetworkController() {
     network = new Network();
 }
@@ -16,7 +18,7 @@ NetworkController::~NetworkController() {
     delete network;
 }
 
-void NetworkController::handleInput(std::vector<std::string> &command) {
+void NetworkController::handleInput(const std::vector<std::string> &command) {
     std::string calledFunction = command.at(0);
     
     if (calledFunction == "module") {
@@ -30,15 +32,46 @@ void NetworkController::handleInput(std::vector<std::string> &command) {
     } else if (calledFunction == "process") {
         std::vector<std::string> inputVector;
         inputVector.resize(command.size() - 1);
-        std::copy(command.begin()++, command.end(), inputVector.begin());
-        
-        std::vector<std::string> outputVector;
-        // network -> process(inputVector, outputVector);
-        network -> clear();
-        for (std::vector<std::string>::iterator it = outputVector.begin(); it != outputVector.end(); ++it)
-            std::cout << ' ' << *it;
-        std::cout << std::endl;
+        std::copy(++command.begin(), command.end(), inputVector.begin());
+        processAndPrint(inputVector);
     } else {
         std::cout << "Unknown input. Please try again." << std::endl;
     }
 }
+
+void NetworkController::processAndPrint(const std::vector<std::string> &input) {
+    std::list<std::string> output;
+    
+    process(input, output);
+    
+    for (auto it = output.begin(); it != output.end(); ++it)
+        std::cout << *it << ' ';
+    std::cout << std::endl;
+}
+
+void NetworkController::process(const std::vector<std::string> &input, std::list<std::string> &output) {
+    long maxOutputSize = input.size() * 16;
+    long currentOutputSize = 0;
+    
+    for (auto it = input.begin(); it != input.end() && currentOutputSize <= maxOutputSize; ++it) {
+        std::string networkOutput;
+        network -> process(*it, networkOutput);
+        output.push_back(networkOutput);
+        currentOutputSize++;
+    }
+    
+    // We will now feed silence to the network until it remains silent. This will ensure that all DelayModules are emptied.
+    std::string previousNetworkOutput;
+    while (previousNetworkOutput != SILENCE && currentOutputSize <= maxOutputSize) {
+        std::string networkOutput;
+        network -> process(SILENCE, networkOutput);
+        output.push_back(networkOutput);
+        currentOutputSize++;
+        previousNetworkOutput.resize(networkOutput.size());
+        std::copy(networkOutput.begin(), networkOutput.end(), previousNetworkOutput.begin());
+    }
+}
+
+
+
+

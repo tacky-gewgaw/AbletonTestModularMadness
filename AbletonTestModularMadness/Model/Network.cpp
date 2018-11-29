@@ -55,12 +55,12 @@ void Network::process(const std::string &input, std::string &output) {
         return;
     }
     
-    first -> feedInput(input);
-    
-    std::list<Module*>::iterator it = modulesInOrder.begin();
-    for (it; it != modulesInOrder.end(); it++) {
-        
-    }
+//    first -> feedInput(input);
+//
+//    std::list<Module*>::iterator it = modulesInOrder.begin();
+//    for (it; it != modulesInOrder.end(); it++) {
+//
+//    }
     
     output.resize(input.size());
     std::copy(input.begin(), input.end(), output.begin());
