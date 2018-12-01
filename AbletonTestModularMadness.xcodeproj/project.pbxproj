@@ -10,7 +10,7 @@
 		C5087D9521A871A70023009C /* NetworkController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C5087D9321A871A70023009C /* NetworkController.cpp */; };
 		C555896A21A34D7C00FCF676 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C555896921A34D7C00FCF676 /* main.cpp */; };
 		C555897621A3D1B300FCF676 /* Network.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C555897421A3D1B300FCF676 /* Network.cpp */; };
-		C555899821A5AE0600FCF676 /* Module.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C555899621A5AE0600FCF676 /* Module.cpp */; };
+		C555899821A5AE0600FCF676 /* BaseModule.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C555899621A5AE0600FCF676 /* BaseModule.cpp */; };
 		C555899B21A5AEBE00FCF676 /* NoopModule.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C555899921A5AEBE00FCF676 /* NoopModule.cpp */; };
 		C555899E21A5AECB00FCF676 /* EchoModule.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C555899C21A5AECB00FCF676 /* EchoModule.cpp */; };
 		C55589A121A5AEEE00FCF676 /* DelayModule.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C555899F21A5AEEE00FCF676 /* DelayModule.cpp */; };
@@ -38,8 +38,8 @@
 		C555896921A34D7C00FCF676 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		C555897421A3D1B300FCF676 /* Network.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Network.cpp; sourceTree = "<group>"; };
 		C555897521A3D1B300FCF676 /* Network.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Network.hpp; sourceTree = "<group>"; };
-		C555899621A5AE0600FCF676 /* Module.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Module.cpp; sourceTree = "<group>"; };
-		C555899721A5AE0600FCF676 /* Module.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Module.hpp; sourceTree = "<group>"; };
+		C555899621A5AE0600FCF676 /* BaseModule.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BaseModule.cpp; sourceTree = "<group>"; };
+		C555899721A5AE0600FCF676 /* BaseModule.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = BaseModule.hpp; sourceTree = "<group>"; };
 		C555899921A5AEBE00FCF676 /* NoopModule.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = NoopModule.cpp; sourceTree = "<group>"; };
 		C555899A21A5AEBE00FCF676 /* NoopModule.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NoopModule.hpp; sourceTree = "<group>"; };
 		C555899C21A5AECB00FCF676 /* EchoModule.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = EchoModule.cpp; sourceTree = "<group>"; };
@@ -104,8 +104,8 @@
 		C555899521A5ADF000FCF676 /* Module */ = {
 			isa = PBXGroup;
 			children = (
-				C555899621A5AE0600FCF676 /* Module.cpp */,
-				C555899721A5AE0600FCF676 /* Module.hpp */,
+				C555899621A5AE0600FCF676 /* BaseModule.cpp */,
+				C555899721A5AE0600FCF676 /* BaseModule.hpp */,
 				C555899921A5AEBE00FCF676 /* NoopModule.cpp */,
 				C555899A21A5AEBE00FCF676 /* NoopModule.hpp */,
 				C555899C21A5AECB00FCF676 /* EchoModule.cpp */,
@@ -182,7 +182,7 @@
 				C555899B21A5AEBE00FCF676 /* NoopModule.cpp in Sources */,
 				C55589A421A5AF2B00FCF676 /* ReverseModule.cpp in Sources */,
 				C555899E21A5AECB00FCF676 /* EchoModule.cpp in Sources */,
-				C555899821A5AE0600FCF676 /* Module.cpp in Sources */,
+				C555899821A5AE0600FCF676 /* BaseModule.cpp in Sources */,
 				C555897621A3D1B300FCF676 /* Network.cpp in Sources */,
 				C55589A121A5AEEE00FCF676 /* DelayModule.cpp in Sources */,
 			);

@@ -2,7 +2,7 @@
 //  NetworkController.hpp
 //  AbletonTestModularMadness
 //
-//  Created by Sander van Kasteel on 23/11/2018.
+//  Created by Sander van Kasteel on 29/11/2018.
 //  Copyright © 2018 Sander van Kasteel. All rights reserved.
 //
 
@@ -11,7 +11,7 @@
 
 #include <stdio.h>
 #include <vector>
-#include "Network.hpp"
+#include "./Model/Network.hpp"
 
 class NetworkController {
 private:

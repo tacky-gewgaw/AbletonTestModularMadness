@@ -2,7 +2,7 @@
 //  EchoModule.hpp
 //  AbletonTestModularMadness
 //
-//  Created by Sander van Kasteel on 21/11/2018.
+//  Created by Sander van Kasteel on 29/11/2018.
 //  Copyright © 2018 Sander van Kasteel. All rights reserved.
 //
 
@@ -10,10 +10,12 @@
 #define EchoModule_hpp
 
 #include <stdio.h>
-#include "Module.hpp"
+#include "BaseModule.hpp"
 
-class EchoModule : public Module {
+class EchoModule : public BaseModule {
 public:
+    ~EchoModule();
+    void generateOutput();
     void reset();
 };
 

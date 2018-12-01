@@ -2,13 +2,13 @@
 //  ModuleFactory.cpp
 //  AbletonTestModularMadness
 //
-//  Created by Sander van Kasteel on 21/11/2018.
+//  Created by Sander van Kasteel on 29/11/2018.
 //  Copyright © 2018 Sander van Kasteel. All rights reserved.
 //
 
 #include "ModuleFactory.hpp"
 
-Module *ModuleFactory::create(const std::string &type) { 
+BaseModule *ModuleFactory::create(const std::string &type) { 
     if (type == "delay") {
         return new DelayModule();
     } else if (type == "echo") {

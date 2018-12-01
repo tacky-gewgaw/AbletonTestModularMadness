@@ -2,7 +2,7 @@
 //  NetworkController.cpp
 //  AbletonTestModularMadness
 //
-//  Created by Sander van Kasteel on 23/11/2018.
+//  Created by Sander van Kasteel on 29/11/2018.
 //  Copyright © 2018 Sander van Kasteel. All rights reserved.
 //
 
@@ -53,23 +53,28 @@ void NetworkController::process(const std::vector<std::string> &input, std::list
     long maxOutputSize = input.size() * 16;
     long currentOutputSize = 0;
     
-    for (auto it = input.begin(); it != input.end() && currentOutputSize <= maxOutputSize; ++it) {
+    for (std::string word : input) {
         std::string networkOutput;
-        network -> process(*it, networkOutput);
+        network -> process(word, networkOutput);
         output.push_back(networkOutput);
         currentOutputSize++;
     }
     
     // We will now feed silence to the network until it remains silent. This will ensure that all DelayModules are emptied.
-    std::string previousNetworkOutput;
+    std::string previousNetworkOutput = output.back();
+    
     while (previousNetworkOutput != SILENCE && currentOutputSize <= maxOutputSize) {
         std::string networkOutput;
         network -> process(SILENCE, networkOutput);
         output.push_back(networkOutput);
         currentOutputSize++;
+        
         previousNetworkOutput.resize(networkOutput.size());
         std::copy(networkOutput.begin(), networkOutput.end(), previousNetworkOutput.begin());
     }
+    
+    // Clear any remaining data from the network
+    network -> reset();
 }
 
 

@@ -2,7 +2,7 @@
 //  Network.cpp
 //  AbletonTestModularMadness
 //
-//  Created by Sander van Kasteel on 20/11/2018.
+//  Created by Sander van Kasteel on 29/11/2018.
 //  Copyright © 2018 Sander van Kasteel. All rights reserved.
 //
 
@@ -24,51 +24,54 @@ Network::Network() {
 Network::~Network() {
     delete mf;
     
-    modulesInOrder.clear();
     moduleRegistry.clear();
+    
+    for (BaseModule* module : modulesInOrder) {
+        delete module;
+    }
+    modulesInOrder.clear();
 }
 
 void Network::makeModule(const std::string &name, const std::string &type) {
-    Module* m = mf -> create(type);
+    BaseModule* m = mf -> create(type);
     
     std::cout << "Creating " << type << " module called " << name << std::endl;
     modulesInOrder.push_back(m);
-    moduleRegistry.insert(std::pair<std::string, Module*>(name, m));
+    moduleRegistry.insert(std::pair<std::string, BaseModule*>(name, m));
 }
 
 void Network::makeConnection(const std::string &name1, const std::string &name2) {
-    Module* outModule = moduleRegistry[name1];
-    Module* inModule = moduleRegistry[name2];
+    BaseModule* outModule = moduleRegistry[name1];
+    BaseModule* inModule = moduleRegistry[name2];
     
     std::cout << "Connecting output of " << name1 << " with input of " << name2 << std::endl;
     
-    outModule -> connnectOutputTo(inModule);
+    inModule -> connnectToOutputOf(outModule);
 }
 
 void Network::process(const std::string &input, std::string &output) {
-    std::cout << "Processing " << input << std::endl;
-    Module* first = modulesInOrder.front();
+    BaseModule* first = modulesInOrder.front();
     
     if (first == nullptr) {
+        // When no modules are defined, copy the input string to the output string
         output.resize(input.size());
         std::copy(input.begin(), input.end(), output.begin());
         return;
     }
     
-//    first -> feedInput(input);
-//
-//    std::list<Module*>::iterator it = modulesInOrder.begin();
-//    for (it; it != modulesInOrder.end(); it++) {
-//
-//    }
+    first -> overrideInput(input);
     
-    output.resize(input.size());
-    std::copy(input.begin(), input.end(), output.begin());
+    for (BaseModule* module : modulesInOrder) {
+        module -> generateOutput();
+    }
+    
+    BaseModule* last = modulesInOrder.back();
+    last -> getOutput(output);
 }
 
-void Network::clear() { 
-    for (auto it = modulesInOrder.begin(); it != modulesInOrder.end(); it++) {
-        // TODO: reset the individual module
+void Network::reset() {
+    for (BaseModule* module : modulesInOrder) {
+        module -> reset();
     }
 }
 
