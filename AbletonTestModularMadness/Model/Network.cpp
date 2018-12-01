@@ -33,16 +33,26 @@ Network::~Network() {
 }
 
 void Network::makeModule(const std::string &name, const std::string &type) {
-    BaseModule* m = mf -> create(type);
+    try {
+        BaseModule* m = mf -> create(type);
+
+        modulesInOrder.push_back(m);
+        moduleRegistry.insert(std::pair<std::string, BaseModule*>(name, m));
+        std::cout << "Created " << type << " module called " << name << std::endl;
+    } catch (const std::invalid_argument& e) {
+        std::cout << e.what() << std::endl;
+    }
     
-    std::cout << "Creating " << type << " module called " << name << std::endl;
-    modulesInOrder.push_back(m);
-    moduleRegistry.insert(std::pair<std::string, BaseModule*>(name, m));
 }
 
 void Network::makeConnection(const std::string &name1, const std::string &name2) {
     BaseModule* outModule = moduleRegistry[name1];
     BaseModule* inModule = moduleRegistry[name2];
+    
+    if (inModule == nullptr || outModule == nullptr) {
+        std::cout << "One or both modules were not found" << std::endl;
+        return;
+    }
     
     std::cout << "Connecting output of " << name1 << " with input of " << name2 << std::endl;
     

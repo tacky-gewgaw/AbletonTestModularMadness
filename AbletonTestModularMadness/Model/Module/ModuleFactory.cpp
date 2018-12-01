@@ -17,6 +17,5 @@ BaseModule *ModuleFactory::create(const std::string &type) {
         return new NoopModule();
     } else if (type == "reverse") {
         return new ReverseModule();
-    }
-    return new NoopModule();
+    } else throw std::invalid_argument("Unknown module type: " + type);
 }
