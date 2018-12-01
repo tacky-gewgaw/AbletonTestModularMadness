@@ -66,8 +66,8 @@
 		C555895D21A34D7C00FCF676 = {
 			isa = PBXGroup;
 			children = (
-				C5B4765421B325850064F80A /* AbletonTestModularMadnessTests */,
-				C555896821A34D7C00FCF676 /* AbletonTestModularMadness */,
+				C5B4765421B325850064F80A /* ModularMadnessTests */,
+				C555896821A34D7C00FCF676 /* ModularMadness */,
 				C555896721A34D7C00FCF676 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -80,7 +80,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C555896821A34D7C00FCF676 /* AbletonTestModularMadness */ = {
+		C555896821A34D7C00FCF676 /* ModularMadness */ = {
 			isa = PBXGroup;
 			children = (
 				C555897021A34DF400FCF676 /* Model */,
@@ -88,7 +88,7 @@
 				C5087D9321A871A70023009C /* NetworkController.cpp */,
 				C5087D9421A871A70023009C /* NetworkController.hpp */,
 			);
-			path = AbletonTestModularMadness;
+			path = ModularMadness;
 			sourceTree = "<group>";
 		};
 		C555897021A34DF400FCF676 /* Model */ = {
@@ -120,12 +120,12 @@
 			path = Module;
 			sourceTree = "<group>";
 		};
-		C5B4765421B325850064F80A /* AbletonTestModularMadnessTests */ = {
+		C5B4765421B325850064F80A /* ModularMadnessTests */ = {
 			isa = PBXGroup;
 			children = (
 				C5087D9221A5CED50023009C /* catch.hpp */,
 			);
-			path = AbletonTestModularMadnessTests;
+			path = ModularMadnessTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
