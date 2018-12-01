@@ -12,7 +12,7 @@ To run, enter `./ModularMadness` from the same folder.
 ## Using the program
 While ModularMadness is running, you have the following commands at your disposal:
 - `module <name> <type>`, where type is one of `delay`, `echo`, `noop`, and `reverse`.
-- `connect <module_name1> <module_name2>`, where the names should be the names of modules defined by a call with the "module" command.
+- `connect <module_name1> <module_name2>`, where the names should be the names of modules defined by a call with the `module` command.
 - `process <input>`, where input is a line of strings separated by white spaces.
 - `quit` to quit the program.
 
