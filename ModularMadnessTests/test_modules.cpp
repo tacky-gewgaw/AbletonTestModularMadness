@@ -57,63 +57,55 @@ TEST_CASE("Any Module inheriting from BaseModule generates its input as an in or
 }
 
 TEST_CASE("The output of a NoopModule equals its input", "[noop-module]") {
-    NoopModule* noopModule = new NoopModule();
+    NoopModule noopModule;
     
     for (std::string s : inputStrings) {
-        noopModule -> overrideInput(s);
-        noopModule -> generateOutput();
+        noopModule.overrideInput(s);
+        noopModule.generateOutput();
         std::string result;
-        noopModule -> getOutput(result);
+        noopModule.getOutput(result);
         REQUIRE(s == result);
     }
-    
-    delete noopModule;
 }
 
 TEST_CASE("The output of a ReverseModule equals the reverse of its input", "[reverse-module]") {
-    ReverseModule* reverseModule = new ReverseModule();
+    ReverseModule reverseModule;
     
     const std::vector<std::string> expectedOutputStrings = {"od", "er", "im", "af", "los", "al", "it"};
     
     for (int i = 0; i < inputStrings.size(); i++) {
-        reverseModule -> overrideInput(inputStrings[i]);
-        reverseModule -> generateOutput();
+        reverseModule.overrideInput(inputStrings[i]);
+        reverseModule.generateOutput();
         std::string result;
-        reverseModule -> getOutput(result);
+        reverseModule.getOutput(result);
         REQUIRE(expectedOutputStrings[i] == result);
     }
-    
-    delete reverseModule;
 }
 
 TEST_CASE("The output of a DelayModule equals its previous input", "[delay-module]") {
-    DelayModule* delayModule = new DelayModule();
+    DelayModule delayModule;
     
     const std::vector<std::string> expectedOutputStrings = {"hello", "do", "re", "mi", "fa", "sol", "la"};
     
     for (int i = 0; i < inputStrings.size(); i++) {
-        delayModule -> overrideInput(inputStrings[i]);
-        delayModule -> generateOutput();
+        delayModule.overrideInput(inputStrings[i]);
+        delayModule.generateOutput();
         std::string result;
-        delayModule -> getOutput(result);
+        delayModule.getOutput(result);
         REQUIRE(expectedOutputStrings[i] == result);
     }
-    
-    delete delayModule;
 }
 
 TEST_CASE("The output of an EchoModule equals the a concatenation of the input with itself", "[echo-module]") {
-    EchoModule* echoModule = new EchoModule();
+    EchoModule echoModule;
     
     const std::vector<std::string> expectedOutputStrings = {"dodo", "rere", "mimi", "fafa", "solsol", "lala", "titi"};
     
     for (int i = 0; i < inputStrings.size(); i++) {
-        echoModule -> overrideInput(inputStrings[i]);
-        echoModule -> generateOutput();
+        echoModule.overrideInput(inputStrings[i]);
+        echoModule.generateOutput();
         std::string result;
-        echoModule -> getOutput(result);
+        echoModule.getOutput(result);
         REQUIRE(expectedOutputStrings[i] == result);
     }
-    
-    delete echoModule;
 }
