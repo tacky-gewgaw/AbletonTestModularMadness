@@ -9,10 +9,10 @@
 #include <stdio.h>
 #include <string>
 #include "catch.hpp"
-#include "../ModularMadness/Model/Module/NoopModule.cpp"
-#include "../ModularMadness/Model/Module/DelayModule.cpp"
-#include "../ModularMadness/Model/Module/EchoModule.cpp"
-#include "../ModularMadness/Model/Module/ReverseModule.cpp"
+#include "../ModularMadness/Model/Module/NoopModule.hpp"
+#include "../ModularMadness/Model/Module/DelayModule.hpp"
+#include "../ModularMadness/Model/Module/EchoModule.hpp"
+#include "../ModularMadness/Model/Module/ReverseModule.hpp"
 
 const std::vector<std::string> inputStrings = {"do", "re", "mi", "fa", "sol", "la", "ti"};
 

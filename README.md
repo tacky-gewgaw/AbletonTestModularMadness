@@ -7,7 +7,9 @@ Be aware that this is the first time I have ever written C++ code. Therefore, th
 The program was written in MacOSX using XCode. The following instructions should work from any bash terminal.
 From /ModularMadness, enter:
 
-```g++ -std=c++11 main.cpp NetworkController.cpp Model/Network.cpp Model/Module/BaseModule.cpp Model/Module/DelayModule.cpp Model/Module/EchoModule.cpp Model/Module/NoopModule.cpp Model/Module/ReverseModule.cpp Model/Module/ModuleFactory.cpp -o ModularMadness```
+```
+g++ -std=c++11 main.cpp NetworkController.cpp Model/Network.cpp Model/Module/BaseModule.cpp Model/Module/DelayModule.cpp Model/Module/EchoModule.cpp Model/Module/NoopModule.cpp Model/Module/ReverseModule.cpp Model/Module/ModuleFactory.cpp -o ModularMadness
+```
 
 This should compile the source code to an executable called "ModularMadness".
 To run, enter `./ModularMadness` from the same folder.
