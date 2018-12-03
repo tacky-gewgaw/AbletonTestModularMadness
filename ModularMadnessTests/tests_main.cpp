@@ -6,4 +6,7 @@
 //  Copyright © 2018 Sander van Kasteel. All rights reserved.
 //
 
+#define CATCH_CONFIG_MAIN
+
+#include "catch.hpp"
 #include <stdio.h>

@@ -8,7 +8,7 @@ The program was written in MacOSX using XCode. The following instructions should
 From /ModularMadness, enter:
 
 ```
-g++ -std=c++11 main.cpp NetworkController.cpp Model/Network.cpp Model/Module/BaseModule.cpp Model/Module/DelayModule.cpp Model/Module/EchoModule.cpp Model/Module/NoopModule.cpp Model/Module/ReverseModule.cpp Model/Module/ModuleFactory.cpp -o ModularMadness
+g++ -std=c++11 main.cpp NetworkController.cpp Model/Network.cpp Model/Module/*.cpp -o ModularMadness
 ```
 
 This should compile the source code to an executable called "ModularMadness".
@@ -22,4 +22,14 @@ While ModularMadness is running, you have the following commands at your disposa
 - `quit` to quit the program.
 
 ## Testing the program
-TODO
+As with compiling the program, compiling and running the tests can be done on a bash terminal using the following commands. From /ModularMadnessTests, enter:
+```
+g++ -std=c++11 -c tests_main.cpp
+```
+```
+g++ -std=c++11 -o tests_runner tests_main.o test_network.cpp test_modules.cpp ../ModularMadness/Model/Module/*.cpp  ../ModularMadness/Model/Network.cpp
+```
+Then, to run the tests:
+```
+./tests_runner --success
+```

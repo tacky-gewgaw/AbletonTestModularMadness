@@ -16,7 +16,7 @@
 
 const std::vector<std::string> inputStrings = {"do", "re", "mi", "fa", "sol", "la", "ti"};
 
-TEST_CASE("Any Module inheriting from BaseModule generates its input as an in order concatenation of the outputs of its predecessing Modules", "[base-module]") {
+TEST_CASE("A Module inheriting from BaseModule generates its input as an in order concatenation of the outputs of its predecessing Modules", "[base-module]") {
     BaseModule* m = new NoopModule();
     
     const std::string expectedResult = "doremifasollati";

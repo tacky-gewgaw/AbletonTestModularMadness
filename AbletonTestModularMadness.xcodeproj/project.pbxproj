@@ -17,8 +17,8 @@
 		C55589A421A5AF2B00FCF676 /* ReverseModule.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C55589A221A5AF2B00FCF676 /* ReverseModule.cpp */; };
 		C55589A721A5AF4100FCF676 /* ModuleFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C55589A521A5AF4100FCF676 /* ModuleFactory.cpp */; };
 		C5B4765621B3268E0064F80A /* test_modules.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C5B4765521B3268E0064F80A /* test_modules.cpp */; };
-		C5B4765821B535230064F80A /* tests_main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C5B4765721B535230064F80A /* tests_main.cpp */; };
 		C5B4765A21B537650064F80A /* test_network.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C5B4765921B537650064F80A /* test_network.cpp */; };
+		C5B4765F21B561120064F80A /* tests_main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C5B4765E21B561120064F80A /* tests_main.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -54,8 +54,8 @@
 		C55589A521A5AF4100FCF676 /* ModuleFactory.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ModuleFactory.cpp; sourceTree = "<group>"; };
 		C55589A621A5AF4100FCF676 /* ModuleFactory.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ModuleFactory.hpp; sourceTree = "<group>"; };
 		C5B4765521B3268E0064F80A /* test_modules.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = test_modules.cpp; sourceTree = "<group>"; };
-		C5B4765721B535230064F80A /* tests_main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = tests_main.cpp; sourceTree = "<group>"; };
 		C5B4765921B537650064F80A /* test_network.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = test_network.cpp; sourceTree = "<group>"; };
+		C5B4765E21B561120064F80A /* tests_main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = tests_main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,8 +131,8 @@
 			children = (
 				C5087D9221A5CED50023009C /* catch.hpp */,
 				C5B4765521B3268E0064F80A /* test_modules.cpp */,
-				C5B4765721B535230064F80A /* tests_main.cpp */,
 				C5B4765921B537650064F80A /* test_network.cpp */,
+				C5B4765E21B561120064F80A /* tests_main.cpp */,
 			);
 			path = ModularMadnessTests;
 			sourceTree = "<group>";
@@ -196,10 +196,10 @@
 				C5087D9521A871A70023009C /* NetworkController.cpp in Sources */,
 				C55589A721A5AF4100FCF676 /* ModuleFactory.cpp in Sources */,
 				C555896A21A34D7C00FCF676 /* main.cpp in Sources */,
-				C5B4765821B535230064F80A /* tests_main.cpp in Sources */,
 				C5B4765621B3268E0064F80A /* test_modules.cpp in Sources */,
 				C555899B21A5AEBE00FCF676 /* NoopModule.cpp in Sources */,
 				C5B4765A21B537650064F80A /* test_network.cpp in Sources */,
+				C5B4765F21B561120064F80A /* tests_main.cpp in Sources */,
 				C55589A421A5AF2B00FCF676 /* ReverseModule.cpp in Sources */,
 				C555899E21A5AECB00FCF676 /* EchoModule.cpp in Sources */,
 				C555899821A5AE0600FCF676 /* BaseModule.cpp in Sources */,

@@ -1,2 +1,5 @@
 AbletonTestModularMadness.xcodeproj
 AbletonTestModularMadness/ModularMadness
+ModularMadnessTests/a.out
+ModularMadnessTests/tests_main.o
+ModularMadnessTests/tests_runner

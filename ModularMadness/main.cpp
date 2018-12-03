@@ -20,6 +20,8 @@ int main(int argc, const char * argv[]) {
     while (run) {
         std::string rawInput;
         
+        std::cout << "> ";
+        
         getline(std::cin, rawInput);
         
         std::istringstream iss(rawInput);
