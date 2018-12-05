@@ -10,17 +10,21 @@
 #include "catch.hpp"
 #include "../ModularMadness/Model/Network.hpp"
 
-TEST_CASE("A network strusture can be defined by calling its methods", "[network]") {
-    Network* testNetwork = new Network();
+const std::vector<std::string> inputStrings1 = {"do", "re", "mi", "fa", "sol", "la", "ti"};
+
+TEST_CASE("A network with a reverse module connscted to a delay module returns the reverse of the previous input", "[network]") {
+    Network testNetwork;
     
-//    SECTION("When ") {
-//        testNetwork -> makeModule("alpha", "reverse");
-//        testNetwork -> makeModule("beta", "delay");
-//    }
+    testNetwork.makeModule("alpha", "reverse");
+    testNetwork.makeModule("beta", "delay");
+    testNetwork.makeConnection("alpha", "beta");
     
-    // TODO: methods to test:
-    // testNetwork -> makeModule(name, type);
-    // testNetwork -> makeConnection(name1, name2);
+    const std::vector<std::string> expectedResults = {"hello", "od", "er", "im", "af", "los", "al"};
     
-    delete testNetwork;
+    for (int i = 0; i < inputStrings1.size(); i++) {
+        std::string result;
+        const std::string inputString = inputStrings1[i];
+        testNetwork.process(inputString, result);
+        REQUIRE(result == expectedResults[i]);
+    }
 }
